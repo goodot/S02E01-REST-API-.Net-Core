@@ -16,16 +16,15 @@ namespace CommandAPI.Controllers
             _context = context;
         }
 
-        //GET:      api/commands
+        //GET: api/commands
         [HttpGet]
         public ActionResult<IEnumerable<Command>> GetCommandItems()
         {
             return _context.CommandItems;
         }
         
-        //GET:      api/commands/n
+        //GET: api/commands/n
         [HttpGet("{id}")]
-        
         public ActionResult<Command> GetCommandItem(int id)
         {
             var commandItem = _context.CommandItems.Find(id);
@@ -38,7 +37,7 @@ namespace CommandAPI.Controllers
             return commandItem;
         }
         
-        //POST:     api/commands
+        //POST: api/commands
         [HttpPost]
         public ActionResult<Command> PostCommandItem(Command command)
         {
